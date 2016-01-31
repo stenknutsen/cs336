@@ -15,7 +15,7 @@ grandMother(GM, GC):-
 %! RULE 3
 person(P):- wifeOf(P,_).
 person(P):- wifeOf(_,P).
-person(p):- childOf(P,_).
+person(P):- childOf(P,_).
 person(P):- childOf(_,P).
 person(P):- male(P).
 person(P):- female(P).
@@ -87,3 +87,42 @@ allGirlCouple(A,B):-
         not(hasMaleChild(A,B)),
 	spouseOf(A,B),
         hasAtLeastOneChild(A,B).
+
+%! RULE 7 (errors)
+
+%! biGender error
+error1:-
+    male(X),
+    female(X).
+
+%! child has only one parent error
+error2:-
+    childOf(Child,A),
+    spouseOf(A,B),
+    not(childOf(Child,B)).
+
+%! both male marriage error
+error3:-
+    wifeOf(A,B),
+    male(A),
+    male(B).
+
+%! both female marriage error
+error4:-
+	wifeOf(A,B),
+	female(A),
+	female(B).
+
+%! polygynous marriage error
+error5:-
+    wifeOf(A,B),
+    wifeOf(C,B),
+    A\=C.
+
+
+%! polyandrous marriage error
+error6:-
+    wifeOf(A,B),
+    wifeOf(A,C),
+    B\=C.
+
