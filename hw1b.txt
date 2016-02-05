@@ -170,6 +170,54 @@ The rules are safe.
 An example of an unsafe rule would be:
 s(A,B):- NOT m(A,B).
 
+e)
+
+S0 = 
+
+b
+-----
+3 2 
+2 1
+
+. . . 
+
+S1 = S0 U
+
+m
+-----
+3 2
+2 1
+
+. . . 
+
+S2 = S1 U
+
+m
+-----
+2 3 
+1 2
+
+s
+-----
+3 3
+2 3
+1 2
+
+. . . 
+
+S3 = S2 U
+
+s
+-----
+3 1
+3 2
+2 1
+1 1
+1 3
+
+#end
+
+
 
 
 
