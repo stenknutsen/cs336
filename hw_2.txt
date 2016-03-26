@@ -1,0 +1,116 @@
+Sten Knutsen
+Homework 2
+
+1)
+
+Algebra:
+
+PROJECT[Pub](serves|><|SELECT[Drinker='joe'](likes))
+
+Datalog:
+
+joinsServesAndLikes(Drinker, Beer, Pub, Cost):-
+	likes(Drinker, Beer), Drinker = 'joe',
+	serves(Pub, Beer, Cost).
+
+projectAnswer(Pub):-
+	joinServesAndLikes(_,_,Pub,_).
+
+
+2)
+
+Algebra:
+
+PROJECT[Drinker](frequents|><|SELECT[Cost<3](serves))
+
+Datalog:
+
+joinFrequentsAndServes(Drinker, Pub, Beer, Cost):-
+	serves(Pub, Beer, Cost), cost>3,
+	frequents(Drinker, Pub).
+projectAnswer(Drinker):-
+	joinFrequentsAndServes(Drinker,_,_,_).
+
+3)
+
+Algebra:
+
+PROJECT[Drinker](likes|><|(PROJECT[Beer](SELECT[Cost>8](serves)|><|SELECT[Drinker = 'joe'](likes))))
+
+Datalog:
+
+joeLikesJoinWithExpensive(Pub, Beer, Cost, Drinker):-
+	serves(Pub, Beer, Cost), Cost>8,
+	likes(Drinker, Beer), Drinker='joe'.
+
+projectBeer(Beer):-
+	joeLikesJoinWithExpensive(_, Beer, _, _).
+
+likesJoinWithProjectBeer(Drinker, Beer):-
+	projectBeer(Beer),
+	likes(Drinker, Beer).
+
+projectAnswer(Drinker):-
+	likesJoinWithProjectBeer(Drinker,_).
+
+
+4)
+
+Algebra:
+
+PROJECT[Drinker](likes) - PROJECT[Drinker](frequents)
+
+
+Datalog:
+
+drinkersWhoLikeSomeBeer(Drinker):-
+	likes(Drinker,_).
+
+drinkersWhoFrequentPubs(Drinker):-
+	frequents(Drinker,_).
+
+projectAnswer(Drinker):-
+	drinkersWhoLikeSomeBeer(Drinker),
+	NOT(drinkersWhoFrequentPubs(Drinker)).
+
+5)
+
+Algebra:
+
+PROJECT[Drinker](frequents|><|(PROJECT[Pub](SELECT[Beer='stella'](serves) U SELECT[Beer='molson'](serves)))
+
+
+Datalog:
+
+pubsSellingStellaOrMolson(Pub,Beer,Cost):-
+	serves(Pub, Beer, Cost), Beer = 'stella'.
+
+
+pubsSellingStellaOrMolson(Pub,Beer,Cost):-
+	serves(Pub, Beer, Cost), Beer = 'molson'.
+
+projectPubs(Pub):-
+	pubsSellingStellaOrMolson(Pub,_,_).	
+
+joinFrequentsWithPubs(Drinker, Pub):-
+	frequents(Drinker,Pub),
+	projectPubs(Pub).
+
+projectAnswer(Drinker):-
+	joinFrequentsWithPubs(Drinker,_)
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+ 
