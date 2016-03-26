@@ -1,5 +1,9 @@
 %!Sten Knutsen, Homework 1a  
+<<<<<<< HEAD
 %! we are now in the POTATO branch and anything is possible
+=======
+%! ok here I am in the potato branch
+>>>>>>> potato
 
 %! RULE 1                              
 biGender(X):-
