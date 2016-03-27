@@ -127,3 +127,4 @@ error6:-
     wifeOf(A,C),
     B\=C.
 
+adding stuff at the obttom
