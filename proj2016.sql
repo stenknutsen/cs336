@@ -25,5 +25,13 @@ FOREIGN KEY (upc_code) REFERENCES game,
 FOREIGN KEY (item_id) REFERENCES item
 );
 
+CREATE TABLE admin_account(
+username VARCHAR(20),
+password VARCHAR(20),
+first_name VARCHAR(20),
+last_name VARCHAR(20),
+PRIMARY KEY (username)
+);
+
 
 
