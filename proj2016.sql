@@ -33,5 +33,16 @@ last_name VARCHAR(20),
 PRIMARY KEY (username)
 );
 
-
+CREATE TABLE member_account(
+username VARCHAR(20),
+password VARCHAR(20),
+first_name VARCHAR(20),
+last_name VARCHAR(20),
+street_address VARCHAR(20),
+city VARCHAR(20),
+zip VARCHAR(20),
+credit_card_number VARCHAR(20),
+paypal_account_number VARCHAR(20)
+PRIMARY KEY (username)
+);
 
