@@ -1,6 +1,6 @@
 %!Sten Knutsen, Homework 1a  
 %! ok here I am in the potato branch
-
+%! adding some listerine
 
 %! RULE 1                              
 biGender(X):-
