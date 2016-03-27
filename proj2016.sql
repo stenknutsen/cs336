@@ -17,4 +17,12 @@ min_price NUMERIC(20),
 max_price NUMERIC(20)
 )
 
+CREATE TABLE has_unique(
+upc_code VARCHAR(12),
+item_id INT
+PRIMARY KEY (item_id),
+FOREIGN KEY (upc_code) REFERENCES game,
+FOREIGN KEY (item_id) REFERENCES item
+)
+
 
