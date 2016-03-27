@@ -1,6 +1,6 @@
 %!Sten Knutsen, Homework 1a  
 %! ok here I am in the potato branch
-
+various
 %! RULE 1                              
 biGender(X):-
         male(X),
