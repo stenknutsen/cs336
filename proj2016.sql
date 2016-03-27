@@ -46,3 +46,11 @@ paypal_account_number VARCHAR(20)
 PRIMARY KEY (username)
 );
 
+CREATE TABLE csr_account(
+username VARCHAR(20),
+password VARCHAR(20),
+first_name VARCHAR(20),
+last_name VARCHAR(20),
+PRIMARY KEY (username)
+);
+
