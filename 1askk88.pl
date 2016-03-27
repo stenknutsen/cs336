@@ -5,7 +5,8 @@
 %! RULE 1                              
 biGender(X):-
         male(X),
-        female(X).
+        female(X),
+        ice cream sandwich
 
 
 %! RULE 2
