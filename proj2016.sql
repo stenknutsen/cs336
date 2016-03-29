@@ -1,14 +1,21 @@
 --TEAM 8
 --Deliverable #3
 --tables for project
-CREATE TABLE game
-(upc_code VARCHAR(12),
-title VARCHAR(50),
-system VARCHAR(20),
-rating VARCHAR(20),
-genre(20)
+CREATE DATABASE IF NOT EXISTS proj2016
+USE proj2016
+
+DROP TABLE IF EXISTS game;
+
+CREATE TABLE game(
+upc_code VARCHAR(12) NOT NULL,
+title VARCHAR(50) DEFAULT NULL,
+system VARCHAR(20) DEFAULT NULL,
+rating VARCHAR(20)DEFAULT NULL,
+genre(20) DEFAULT NULL,
 PRIMARY KEY (upc_code)
 );
+
+INSERT INTO game ();
 
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
