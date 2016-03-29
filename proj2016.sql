@@ -14,7 +14,7 @@ rating VARCHAR(20)DEFAULT NULL,
 genre(20) DEFAULT NULL,
 PRIMARY KEY (upc_code)
 );
-
+-- this INSERT not necessary right now. . . 
 INSERT INTO game ();
 
 CREATE TABLE item(
