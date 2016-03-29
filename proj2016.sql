@@ -1,6 +1,8 @@
 --TEAM 8
 --Deliverable #3
 --tables for project
+--hello
+
 CREATE TABLE game
 (upc_code VARCHAR(12),
 title VARCHAR(50),
