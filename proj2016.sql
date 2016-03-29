@@ -1,6 +1,7 @@
 --TEAM 8
 --Deliverable #3
 --tables for project
+<<<<<<< HEAD
 CREATE DATABASE IF NOT EXISTS proj2016
 USE proj2016
 
@@ -12,6 +13,16 @@ title VARCHAR(50) DEFAULT NULL,
 system VARCHAR(20) DEFAULT NULL,
 rating VARCHAR(20)DEFAULT NULL,
 genre(20) DEFAULT NULL,
+=======
+--hi
+
+CREATE TABLE game
+(upc_code VARCHAR(12),
+title VARCHAR(50),
+system VARCHAR(20),
+rating VARCHAR(20),
+genre(20)
+>>>>>>> origin/master
 PRIMARY KEY (upc_code)
 );
 
