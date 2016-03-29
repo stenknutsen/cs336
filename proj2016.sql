@@ -4,8 +4,8 @@
 CREATE DATABASE IF NOT EXISTS proj2016
 USE proj2016
 
+--follow this pattern for the rest of the tables we do
 DROP TABLE IF EXISTS game;
-
 CREATE TABLE game(
 upc_code VARCHAR(12) NOT NULL,
 title VARCHAR(50) DEFAULT NULL,
@@ -14,8 +14,8 @@ rating VARCHAR(20)DEFAULT NULL,
 genre(20) DEFAULT NULL,
 PRIMARY KEY (upc_code)
 );
--- this INSERT not necessary right now. . . 
-INSERT INTO game ();
+-- this INSERT not necessary right now. . .so I'm commenting it out 
+--INSERT INTO game ();
 
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
