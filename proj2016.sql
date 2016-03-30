@@ -74,3 +74,14 @@ last_name VARCHAR(20),
 PRIMARY KEY (username)
 );
 
+DROP TABLE IF EXISTS guest;
+CREATE TABLE guest(
+guest_id VARCHAR(20),
+name VARCHAR(20),
+email VARCHAR(30),
+shipping_address VARCHAR(30),
+credit_card_info VARCHAR(16),
+paypal_info VARCHAR(30),
+PRIMARY KEY (guest_id)
+);
+
