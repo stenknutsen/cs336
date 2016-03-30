@@ -16,7 +16,7 @@ PRIMARY KEY (upc_code)
 );
 -- this INSERT not necessary right now. . .so I'm commenting it out 
 --INSERT INTO game ();
-
+DROP TABLE IF EXISTS item;
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 condition VARCHAR(20),
@@ -24,6 +24,7 @@ min_price NUMERIC(20),
 max_price NUMERIC(20)
 );
 
+DROP TABLE IF EXISTS has_unique;
 CREATE TABLE has_unique(
 upc_code VARCHAR(12),
 item_id INT
@@ -32,6 +33,7 @@ FOREIGN KEY (upc_code) REFERENCES game,
 FOREIGN KEY (item_id) REFERENCES item
 );
 
+DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
 username VARCHAR(20),
 password VARCHAR(20),
@@ -40,6 +42,8 @@ last_name VARCHAR(20),
 PRIMARY KEY (username)
 );
 
+
+DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
 username VARCHAR(20),
 password VARCHAR(20),
@@ -53,6 +57,8 @@ paypal_account_number VARCHAR(20)
 PRIMARY KEY (username)
 );
 
+
+DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
 username VARCHAR(20),
 password VARCHAR(20),
