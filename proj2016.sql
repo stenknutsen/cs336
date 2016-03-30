@@ -24,6 +24,14 @@ min_price NUMERIC(20),
 max_price NUMERIC(20)
 );
 
+DROP TABLE IF EXISTS bid_history;
+CREATE TABLE bid_history(
+bid_history_id INT NOT NULL 
+auction_id VARCHAR(20),
+bid_id VARCHAR(20),
+PRIMARY KEY (bid_history_id)
+);
+
 DROP TABLE IF EXISTS has_unique;
 CREATE TABLE has_unique(
 upc_code VARCHAR(12),
@@ -41,7 +49,6 @@ first_name VARCHAR(20),
 last_name VARCHAR(20),
 PRIMARY KEY (username)
 );
-
 
 DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
