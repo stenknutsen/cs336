@@ -24,13 +24,6 @@ min_price NUMERIC(20),
 max_price NUMERIC(20)
 );
 
-DROP TABLE IF EXISTS bid_history;
-CREATE TABLE bid_history(
-bid_history_id INT NOT NULL 
-auction_id VARCHAR(20),
-bid_id VARCHAR(20),
-PRIMARY KEY (bid_history_id)
-);
 
 DROP TABLE IF EXISTS has_unique;
 CREATE TABLE has_unique(
@@ -96,4 +89,6 @@ auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
 FOREIGN KEY (item_id) REFERENCES item
 ); 
+
+
 
