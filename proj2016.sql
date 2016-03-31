@@ -30,8 +30,10 @@ hours_open INT,
 sale_price DECIMAL(10,2),
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
-item_id INT,
-FOREIGN KEY (item_id) REFERENCES item
+item_of_item_id INT NOT NULL references item,
+buy_now_guest_guest_id INT NOT NULL references guest,
+cancel_csr_id INT NOT NULL references csr_account,
+seller_of_member_id INT NOT NULL referencs member_account 
 ); 
 
 DROP TABLE IF EXISTS bid;
@@ -53,38 +55,39 @@ FOREIGN KEY (bid_id) REFERENCES bid
 
 DROP TABLE IF EXISTS buy_now_guest
 CREATE TABLE buy_now_guest(
-guest_id VARCHAR(20) REFERENCES guest ON DELETE CASCADE,
-auction_id VARCHAR(20) REFERENCES auction ON DELETE CASCADE,
+guest_id INT NOT NULL REFERENCES guest ON DELETE CASCADE,
+auction_id INT NOT NULL REFERENCES auction ON DELETE CASCADE,
 PRIMARY KEY (guest_id, auction_id) 
 );
 
 DROP TABLE IF EXISTS buy_now_member
 CREATE TABLE buy_now_member(
-member_id VARCHAR(20) references member on delete cascade,
-auction_id VARCHAR(20) references Auction on delete cascade,
+member_id INT NOT NULL references member on delete cascade,
+auction_id INT NOT NULL references Auction on delete cascade,
 Primary Key (member_id, auction_id) 
 );
 
 DROP TABLE IF EXISTS cart;
 CREATE TABLE cart(
-purchase_id VARCHAR(20),
-user_id VARCHAR(20),
-guest_id VARCHAR(20),
-item_id VARCHAR(20),
+purchase_id INT NOT NULL,
+has_a_member_id INT NOT NULL references member,
+has_guest_id INT NOT NULL references guest,
+placed_in_item_id INT NOT NULL references item,
 PRIMARY KEY (purchase_id)
 );
 
 --Took from Karl--
 DROP TABLE IF EXISTS creates
 CREATE TABLE creates(
-bid_history_id VARCHAR(20) references bid_history on delete cascade,
-auction_id VARCHAR(20) references auction on delete cascade,
+bid_history_id INT NOT NULL references bid_history on delete cascade,
+auction_id INT NOT NULL references auction on delete cascade,
 Primary Key (bid_history_id, auction_id) 
 );
 
 DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
 csr_id INT NOT NULL AUTO_INCREMENT,
+maintains_admin_id INT NOT NULL references admin_account,
 PRIMARY KEY (csr_id, username),
 FOREIGN KEY (username) references account
 );
@@ -111,15 +114,6 @@ paypal_info VARCHAR(30),
 PRIMARY KEY (guest_id)
 );
 
-DROP TABLE IF EXISTS has_unique;
-CREATE TABLE has_unique(
-upc_code VARCHAR(12),
-item_id INT,
-PRIMARY KEY (item_id),
-FOREIGN KEY (upc_code) REFERENCES game,
-FOREIGN KEY (item_id) REFERENCES item
-);
-
 -- this INSERT not necessary right now. . .so I'm commenting it out 
 --INSERT INTO game ();
 DROP TABLE IF EXISTS item;
@@ -128,15 +122,14 @@ item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 condition VARCHAR(20),
 min_price DECIMAL(10,2),
 max_price DECIMAL(10,2)
+has_unique_upc_code VARCHAR(12) NOT NULL references game
 );
 
-DROP TABLE IF EXISTS item_of;
-CREATE TABLE item_of(
-auction_id INT NOT NULL,
-item_id INT NOT NULL,
-PRIMARY KEY (item_id),
-FOREIGN KEY (autction_id) REFERENCES auction,
-FOREIGN KEY (item_id) REFERENCES item
+DROP TABLE IF EXISTS makes
+CREATE TABLE makes(
+bid_id INT NOT NULL references bid ON DELETE cascade,
+member_id INT NOT NULL references member ON DELETE cascade,
+PRIMARY KEY (bid_id, member_id)
 );
 
 DROP TABLE IF EXISTS member_account;
