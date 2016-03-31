@@ -5,13 +5,21 @@ CREATE DATABASE IF NOT EXISTS proj2016
 USE proj2016
 
 --follow this pattern for the rest of the tables we do
+DROP TABLE IF EXISTS account
+CREATE TABLE account(
+	username VARCHAR(20),
+	password VARCHAR(20),
+	first_name VARCHAR(20),
+	last_name VARCHAR(20),
+	email VARCHAR(20),
+	Primary Key (username) 
+);
+	
 DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
-username VARCHAR(20),
-password VARCHAR(20),
-first_name VARCHAR(20),
-last_name VARCHAR(20),
-PRIMARY KEY (username)
+admin_id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (admin_id, username),
+FOREIGN KEY (username) references account
 );
 
 DROP TABLE IF EXISTS auction;
@@ -76,11 +84,9 @@ Primary Key (bid_history_id, auction_id)
 
 DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
-username VARCHAR(20),
-password VARCHAR(20),
-first_name VARCHAR(20),
-last_name VARCHAR(20),
-PRIMARY KEY (username)
+csr_id INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (csr_id, username),
+FOREIGN KEY (username) references account
 );
 
 DROP TABLE IF EXISTS game;
@@ -135,14 +141,12 @@ FOREIGN KEY (item_id) REFERENCES item
 
 DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
-username VARCHAR(20),
-password VARCHAR(20),
-first_name VARCHAR(20),
-last_name VARCHAR(20),
+member_id INT NOT NULL AUTO_INCREMENT,
 street_address VARCHAR(20),
 city VARCHAR(20),
 zip VARCHAR(20),
 credit_card_number VARCHAR(20),
 paypal_account_number VARCHAR(20),
-PRIMARY KEY (username)
+PRIMARY KEY (member_id, username),
+FOREIGN KEY (username) references account
 );
