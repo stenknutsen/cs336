@@ -28,7 +28,7 @@ max_price NUMERIC(20)
 DROP TABLE IF EXISTS has_unique;
 CREATE TABLE has_unique(
 upc_code VARCHAR(12),
-item_id INT
+item_id INT,
 PRIMARY KEY (item_id),
 FOREIGN KEY (upc_code) REFERENCES game,
 FOREIGN KEY (item_id) REFERENCES item
@@ -53,7 +53,7 @@ street_address VARCHAR(20),
 city VARCHAR(20),
 zip VARCHAR(20),
 credit_card_number VARCHAR(20),
-paypal_account_number VARCHAR(20)
+paypal_account_number VARCHAR(20),
 PRIMARY KEY (username)
 );
 
@@ -103,7 +103,7 @@ DROP TABLE IF EXISTS bid_history;
 CREATE TABLE bid_history(
 bid_history_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 auction_id INT,
-bid_id INT
+bid_id INT,
 FOREIGN KEY (auction_id) REFERENCES auction,
 FOREIGN KEY (bid_id) REFERENCES bid
 );
