@@ -94,5 +94,6 @@ hours_open INT,
 sale_price DECIMAL(10,2),
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
+FOREIGN KEY (item_id) REFERENCES item
 ); 
 
