@@ -25,13 +25,13 @@ min_price DECIMAL(10,2),
 max_price DECIMAL(10,2)
 );
 
-gDROP TABLE IF EXISTS cart;
+DROP TABLE IF EXISTS cart;
 CREATE TABLE cart(
 purchase_id VARCHAR(20),
 user_id VARCHAR(20),
 guest_id VARCHAR(20),
 item_id VARCHAR(20),
-Primary Key (purchase_id)
+PRIMARY KEY (purchase_id)
 );
 
 DROP TABLE IF EXISTS buy_now_guest
