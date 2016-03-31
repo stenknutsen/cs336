@@ -139,6 +139,7 @@ city VARCHAR(20),
 zip VARCHAR(20),
 credit_card_number VARCHAR(20),
 paypal_account_number VARCHAR(20),
+maintains_csr_id INT NOT NULL references csr_account,
 PRIMARY KEY (member_id, username),
 FOREIGN KEY (username) references account
 );
