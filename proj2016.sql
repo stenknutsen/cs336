@@ -24,13 +24,20 @@ min_price DECIMAL(10,2),
 max_price DECIMAL(10,2)
 );
 
-DROP TABLE IF EXISTS cart;
+gDROP TABLE IF EXISTS cart;
 CREATE TABLE cart(
 purchase_id VARCHAR(20),
 user_id VARCHAR(20),
 guest_id VARCHAR(20),
 item_id VARCHAR(20),
 Primary Key (purchase_id)
+);
+
+DROP TABLE IF EXISTS buy_now_guest
+CREATE TABLE T_buy_now_member(
+guest_id VARCHAR(20) references guest on delete cascade,
+auction_id VARCHAR(20) references acution on delete cascade,
+Primary Key (guest_id, auction_id) 
 );
 
 --Took from Karl--
