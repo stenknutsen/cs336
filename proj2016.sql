@@ -12,7 +12,7 @@ title VARCHAR(50) DEFAULT NULL,
 system VARCHAR(20) DEFAULT NULL,
 rating VARCHAR(20)DEFAULT NULL,
 genre(20) DEFAULT NULL,
-units_sold INT, DEFAULT NULL
+units_sold INT DEFAULT NULL,
 PRIMARY KEY (upc_code)
 );
 -- this INSERT not necessary right now. . .so I'm commenting it out 
