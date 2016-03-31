@@ -87,6 +87,7 @@ hours_open INT,
 sale_price DECIMAL(10,2),
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
+item_id INT,
 FOREIGN KEY (item_id) REFERENCES item
 ); 
 
@@ -104,6 +105,8 @@ bid_history_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 FOREIGN KEY (auction_id) REFERENCES auction,
 FOREIGN KEY (bid_id) REFERENCES bid
 );
+
+
 
 
 
