@@ -42,6 +42,15 @@ FOREIGN KEY (upc_code) REFERENCES game,
 FOREIGN KEY (item_id) REFERENCES item
 );
 
+DROP TABLE IF EXISTS item_of;
+CREATE TABLE item_of(
+auction_id INT NOT NULL,
+item_id INT NOT NULL,
+PRIMARY KEY (item_id),
+FOREIGN KEY (autction_id) REFERENCES auction,
+FOREIGN KEY (item_id) REFERENCES item
+);
+
 DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
 username VARCHAR(20),
