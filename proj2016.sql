@@ -111,7 +111,7 @@ PRIMARY KEY (username)
 
 DROP TABLE IF EXISTS guest;
 CREATE TABLE guest(
-guest_id VARCHAR(20),
+guest_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 name VARCHAR(20),
 email VARCHAR(30),
 shipping_address VARCHAR(30),
