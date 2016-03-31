@@ -76,7 +76,6 @@ placed_in_item_id INT NOT NULL references item,
 PRIMARY KEY (purchase_id)
 );
 
---Took from Karl--
 DROP TABLE IF EXISTS creates
 CREATE TABLE creates(
 bid_history_id INT NOT NULL references bid_history on delete cascade,
