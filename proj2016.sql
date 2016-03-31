@@ -33,6 +33,15 @@ item_id VARCHAR(20),
 Primary Key (purchase_id)
 );
 
+--Took from Karl--
+DROP TABLE IF EXISTS creates
+CREATE TABLE creates(
+bid_history_id VARCHAR(20) references bid_history on delete cascade,
+auction_id VARCHAR(20) references auction on delete cascade,
+Primary Key (bid_history_id, auction_id) 
+);
+
+
 DROP TABLE IF EXISTS has_unique;
 CREATE TABLE has_unique(
 upc_code VARCHAR(12),
