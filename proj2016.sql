@@ -7,12 +7,12 @@ USE proj2016
 --follow this pattern for the rest of the tables we do
 DROP TABLE IF EXISTS account
 CREATE TABLE account(
-	username VARCHAR(20),
-	password VARCHAR(20),
-	first_name VARCHAR(20),
-	last_name VARCHAR(20),
-	email VARCHAR(20),
-	Primary Key (username) 
+username VARCHAR(20),
+password VARCHAR(20),
+first_name VARCHAR(20),
+last_name VARCHAR(20),
+email VARCHAR(20),
+Primary Key (username) 
 );
 	
 DROP TABLE IF EXISTS admin_account;
