@@ -35,7 +35,7 @@ PRIMARY KEY (purchase_id)
 );
 
 DROP TABLE IF EXISTS buy_now_guest
-CREATE TABLE T_buy_now_member(
+CREATE TABLE buy_now_member(
 guest_id VARCHAR(20) references guest on delete cascade,
 auction_id VARCHAR(20) references acution on delete cascade,
 Primary Key (guest_id, auction_id) 
