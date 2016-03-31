@@ -40,6 +40,13 @@ auction_id VARCHAR(20) references acution on delete cascade,
 Primary Key (guest_id, auction_id) 
 );
 
+DROP TABLE IF EXISTS buy_now_member
+CREATE TABLE buy_now_member(
+member_id VARCHAR(20) references member on delete cascade,
+auction_id VARCHAR(20) references Auction on delete cascade,
+Primary Key (member_id, auction_id) 
+);
+
 --Took from Karl--
 DROP TABLE IF EXISTS creates
 CREATE TABLE creates(
