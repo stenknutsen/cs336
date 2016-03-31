@@ -102,6 +102,8 @@ autobid BOOLEAN
 DROP TABLE IF EXISTS bid_history;
 CREATE TABLE bid_history(
 bid_history_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+auction_id INT,
+bid_id INT
 FOREIGN KEY (auction_id) REFERENCES auction,
 FOREIGN KEY (bid_id) REFERENCES bid
 );
