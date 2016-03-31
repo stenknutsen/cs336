@@ -90,11 +90,18 @@ current_highest_bid DECIMAL(10,2),
 FOREIGN KEY (item_id) REFERENCES item
 ); 
 
-
 DROP TABLE IF EXISTS bid;
 CREATE TABLE bid(
-item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+bid_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 offer DECIMAL(10,2),
 autobid BOOLEAN
 );
+
+DROP TABLE IF EXISTS bid_history;
+CREATE TABLE bid_history(
+bid_history_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+FOREIGN KEY (auction_id) REFERENCES auction,
+FOREIGN KEY (bid_id) REFERENCES bid
+);
+
 
