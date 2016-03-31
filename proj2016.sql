@@ -20,8 +20,8 @@ DROP TABLE IF EXISTS item;
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 condition VARCHAR(20),
-min_price NUMERIC(20),
-max_price NUMERIC(20)
+min_price DECIMAL(10,2),
+max_price DECIMAL(10,2)
 );
 
 
