@@ -4,7 +4,7 @@
 CREATE DATABASE IF NOT EXISTS proj2016
 USE proj2016
 
-DROP TABLE IF EXISTS account
+DROP TABLE IF EXISTS account;
 CREATE TABLE account(
 username VARCHAR(20),
 password VARCHAR(20),
@@ -52,14 +52,14 @@ FOREIGN KEY (auction_id) REFERENCES auction,
 FOREIGN KEY (bid_id) REFERENCES bid
 );
 
-DROP TABLE IF EXISTS buy_now_guest
+DROP TABLE IF EXISTS buy_now_guest;
 CREATE TABLE buy_now_guest(
 guest_id INT NOT NULL REFERENCES guest ON DELETE CASCADE,
 auction_id INT NOT NULL REFERENCES auction ON DELETE CASCADE,
 PRIMARY KEY (guest_id, auction_id) 
 );
 
-DROP TABLE IF EXISTS buy_now_member
+DROP TABLE IF EXISTS buy_now_member;
 CREATE TABLE buy_now_member(
 member_id INT NOT NULL references member on delete cascade,
 auction_id INT NOT NULL references Auction on delete cascade,
@@ -75,7 +75,7 @@ placed_in_item_id INT NOT NULL references item,
 PRIMARY KEY (purchase_id)
 );
 
-DROP TABLE IF EXISTS creates
+DROP TABLE IF EXISTS creates;
 CREATE TABLE creates(
 bid_history_id INT NOT NULL references bid_history on delete cascade,
 auction_id INT NOT NULL references auction on delete cascade,
@@ -121,7 +121,7 @@ max_price DECIMAL(10,2)
 has_unique_upc_code VARCHAR(12) NOT NULL references game
 );
 
-DROP TABLE IF EXISTS makes
+DROP TABLE IF EXISTS makes;
 CREATE TABLE makes(
 bid_id INT NOT NULL references bid ON DELETE cascade,
 member_id INT NOT NULL references member ON DELETE cascade,
