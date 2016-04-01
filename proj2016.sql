@@ -132,6 +132,7 @@ PRIMARY KEY (bid_id, member_id)
 
 DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
+username VARCHAR(20),
 member_id INT NOT NULL AUTO_INCREMENT,
 street_address VARCHAR(20),
 city VARCHAR(20),
