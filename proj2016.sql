@@ -130,14 +130,13 @@ PRIMARY KEY (bid_id, member_id)
 
 DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
-username VARCHAR(20),
-member_id INT NOT NULL AUTO_INCREMENT,
+member_id VARCHAR(20),
 street_address VARCHAR(20),
 city VARCHAR(20),
 zip VARCHAR(20),
 credit_card_number VARCHAR(20),
 paypal_account_number VARCHAR(20),
-maintains_csr_id INT NOT NULL references csr_account,
-PRIMARY KEY (member_id, username),
-FOREIGN KEY (username) references account
+--maintains_csr_id INT NOT NULL references csr_account,
+PRIMARY KEY (member_id),
+FOREIGN KEY (member_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
