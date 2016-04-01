@@ -84,11 +84,10 @@ Primary Key (bid_history_id, auction_id)
 
 DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
-username VARCHAR(20),
-csr_id INT NOT NULL AUTO_INCREMENT,
+csr_id VARCHAR(20) ,
 maintains_admin_id INT NOT NULL REFERENCES admin_account,
-PRIMARY KEY (csr_id, username),
-FOREIGN KEY (username) REFERENCES account
+PRIMARY KEY (csr_id),
+FOREIGN KEY (csr_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 DROP TABLE IF EXISTS game;
