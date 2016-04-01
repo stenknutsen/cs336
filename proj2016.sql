@@ -16,10 +16,9 @@ Primary Key (username)
 	
 DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
-username VARCHAR(20),
-admin_id INT NOT NULL AUTO_INCREMENT,
-PRIMARY KEY (admin_id, username),
-FOREIGN KEY (username) REFERENCES account
+admin_id VARCHAR(20),
+PRIMARY KEY (admin_id),
+FOREIGN KEY (admin_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 DROP TABLE IF EXISTS auction;
