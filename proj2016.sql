@@ -124,7 +124,7 @@ has_unique_upc_code VARCHAR(12) NOT NULL REFERENCES game
 DROP TABLE IF EXISTS makes;
 CREATE TABLE makes(
 bid_id INT NOT NULL REFERENCES bid ON DELETE cascade,
-member_id INT NOT NULL REFERENCES member ON DELETE cascade,
+member_id INT NOT NULL REFERENCES member_account ON DELETE cascade,
 PRIMARY KEY (bid_id, member_id)
 );
 
