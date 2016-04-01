@@ -16,9 +16,10 @@ Primary Key (username)
 	
 DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
+username VARCHAR(20),
 admin_id INT NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (admin_id, username),
-FOREIGN KEY (username) references account
+FOREIGN KEY (username) REFERENCES account
 );
 
 DROP TABLE IF EXISTS auction;
@@ -29,10 +30,10 @@ hours_open INT,
 sale_price DECIMAL(10,2),
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
-item_of_item_id INT NOT NULL references item,
-buy_now_guest_guest_id INT NOT NULL references guest,
-cancel_csr_id INT NOT NULL references csr_account,
-seller_of_member_id INT NOT NULL referencs member_account 
+item_of_item_id INT NOT NULL REFERENCES item,
+buy_now_guest_guest_id INT NOT NULL REFERENCES guest,
+cancel_csr_id INT NOT NULL REFERENCES csr_account,
+seller_of_member_id INT NOT NULL REFERENCES member_account 
 ); 
 
 DROP TABLE IF EXISTS bid;
@@ -61,17 +62,17 @@ PRIMARY KEY (guest_id, auction_id)
 
 DROP TABLE IF EXISTS buy_now_member;
 CREATE TABLE buy_now_member(
-member_id INT NOT NULL references member on delete cascade,
-auction_id INT NOT NULL references Auction on delete cascade,
+member_id INT NOT NULL REFERENCES member on delete cascade,
+auction_id INT NOT NULL REFERENCES Auction on delete cascade,
 Primary Key (member_id, auction_id) 
 );
 
 DROP TABLE IF EXISTS cart;
 CREATE TABLE cart(
 purchase_id INT NOT NULL,
-has_a_member_id INT NOT NULL references member,
-has_guest_id INT NOT NULL references guest,
-placed_in_item_id INT NOT NULL references item,
+has_a_member_id INT NOT NULL REFERENCES member,
+has_guest_id INT NOT NULL REFERENCES guest,
+placed_in_item_id INT NOT NULL REFERENCES item,
 PRIMARY KEY (purchase_id)
 );
 
@@ -84,10 +85,11 @@ Primary Key (bid_history_id, auction_id)
 
 DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
+username VARCHAR(20),
 csr_id INT NOT NULL AUTO_INCREMENT,
-maintains_admin_id INT NOT NULL references admin_account,
+maintains_admin_id INT NOT NULL REFERENCES admin_account,
 PRIMARY KEY (csr_id, username),
-FOREIGN KEY (username) references account
+FOREIGN KEY (username) REFERENCES account
 );
 
 DROP TABLE IF EXISTS game;
@@ -123,8 +125,8 @@ has_unique_upc_code VARCHAR(12) NOT NULL references game
 
 DROP TABLE IF EXISTS makes;
 CREATE TABLE makes(
-bid_id INT NOT NULL references bid ON DELETE cascade,
-member_id INT NOT NULL references member ON DELETE cascade,
+bid_id INT NOT NULL REFERENCES bid ON DELETE cascade,
+member_id INT NOT NULL REFERENCES member ON DELETE cascade,
 PRIMARY KEY (bid_id, member_id)
 );
 
