@@ -4,7 +4,6 @@
 CREATE DATABASE IF NOT EXISTS proj2016
 USE proj2016
 
---follow this pattern for the rest of the tables we do
 DROP TABLE IF EXISTS account
 CREATE TABLE account(
 username VARCHAR(20),
@@ -113,8 +112,6 @@ paypal_info VARCHAR(30),
 PRIMARY KEY (guest_id)
 );
 
--- this INSERT not necessary right now. . .so I'm commenting it out 
---INSERT INTO game ();
 DROP TABLE IF EXISTS item;
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
