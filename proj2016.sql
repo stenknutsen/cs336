@@ -61,8 +61,8 @@ PRIMARY KEY (guest_id, auction_id)
 
 DROP TABLE IF EXISTS buy_now_member;
 CREATE TABLE buy_now_member(
-member_id INT NOT NULL REFERENCES member on delete cascade,
-auction_id INT NOT NULL REFERENCES Auction on delete cascade,
+member_id INT NOT NULL REFERENCES member_account on delete cascade,
+auction_id INT NOT NULL REFERENCES auction on delete cascade,
 Primary Key (member_id, auction_id) 
 );
 
