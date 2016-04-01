@@ -120,7 +120,7 @@ item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 condition VARCHAR(20),
 min_price DECIMAL(10,2),
 max_price DECIMAL(10,2),
-has_unique_upc_code VARCHAR(12) NOT NULL references game
+has_unique_upc_code VARCHAR(12) NOT NULL REFERENCES game
 );
 
 DROP TABLE IF EXISTS makes;
