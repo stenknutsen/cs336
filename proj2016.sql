@@ -116,11 +116,12 @@ PRIMARY KEY (guest_id)
 
 DROP TABLE IF EXISTS item;
 CREATE TABLE item(
-item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+item_id INT NOT NULL AUTO_INCREMENT,
 condition VARCHAR(20),
 min_price DECIMAL(10,2),
 max_price DECIMAL(10,2),
 has_unique_upc_code VARCHAR(12) NOT NULL REFERENCES game
+PRIMARY KEY (item_id)
 );
 
 DROP TABLE IF EXISTS makes;
