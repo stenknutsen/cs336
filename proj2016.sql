@@ -69,7 +69,7 @@ Primary Key (member_id, auction_id)
 DROP TABLE IF EXISTS cart;
 CREATE TABLE cart(
 purchase_id INT NOT NULL,
-has_a_member_id INT NOT NULL REFERENCES member,
+has_a_member_id INT NOT NULL REFERENCES member_account,
 has_guest_id INT NOT NULL REFERENCES guest,
 placed_in_item_id INT NOT NULL REFERENCES item,
 PRIMARY KEY (purchase_id)
