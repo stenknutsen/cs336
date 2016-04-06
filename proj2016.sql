@@ -11,6 +11,7 @@ password VARCHAR(20) NOT NULL,
 first_name VARCHAR(20)NOT NULL,
 last_name VARCHAR(20)NOT NULL,
 email VARCHAR(20)NOT NULL,
+regdate DATE NOT NULL,
 Primary Key (username) 
 );
 	
