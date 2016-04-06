@@ -6,11 +6,11 @@ USE proj2016
 
 DROP TABLE IF EXISTS account;
 CREATE TABLE account(
-username VARCHAR(20) NOT NULL,
-password VARCHAR(20) NOT NULL,
-first_name VARCHAR(20)NOT NULL,
-last_name VARCHAR(20)NOT NULL,
-email VARCHAR(20)NOT NULL,
+username VARCHAR(50) NOT NULL,
+password VARCHAR(50) NOT NULL,
+first_name VARCHAR(50)NOT NULL,
+last_name VARCHAR(50)NOT NULL,
+email VARCHAR(50)NOT NULL,
 regdate DATE NOT NULL,
 Primary Key (username) 
 );
