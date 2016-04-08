@@ -17,7 +17,7 @@ Primary Key (username)
 	
 DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
-admin_id VARCHAR(20),
+admin_id VARCHAR(50) NOT NULL,
 PRIMARY KEY (admin_id),
 FOREIGN KEY (admin_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
