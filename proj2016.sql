@@ -4,6 +4,7 @@
 CREATE DATABASE IF NOT EXISTS proj2016
 USE proj2016
 
+--account table on team VM as of 4.7.2016
 DROP TABLE IF EXISTS account;
 CREATE TABLE account(
 username VARCHAR(50) NOT NULL,
