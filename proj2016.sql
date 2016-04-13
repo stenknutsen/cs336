@@ -16,7 +16,7 @@ regdate DATE NOT NULL,
 Primary Key (username) 
 );
 
---inserts defauly admin info into account; not yet on team VM
+--inserts default admin info into account; not yet on team VM
 INSERT INTO account (username, password, first_name, last_name, email, regdate)
 VALUES ('admin','password','john','doe','jdoe@gmail.com','2016-04-06');
 	
@@ -26,6 +26,9 @@ admin_id VARCHAR(50) NOT NULL,
 PRIMARY KEY (admin_id),
 FOREIGN KEY (admin_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+--inserts default admin info into admin_account; not yet on team VM
+INSERT INTO admin_account (admin_id) Values ('admin');
 
 DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
