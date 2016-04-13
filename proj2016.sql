@@ -15,6 +15,10 @@ email VARCHAR(50)NOT NULL,
 regdate DATE NOT NULL,
 Primary Key (username) 
 );
+
+--inserts defauly admin info into account; not yet on team VM
+INSERT INTO account (username, password, first_name, last_name, email, regdate)
+VALUES ('admin','password','john','doe','jdoe@gmail.com','2016-04-06');
 	
 DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
