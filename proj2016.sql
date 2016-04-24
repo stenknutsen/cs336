@@ -33,10 +33,10 @@ FOREIGN KEY (admin_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE
 -- on team VM as of 4.17.2016
 INSERT INTO admin_account (admin_id) Values ('admin');
 
+
 DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
-csr_id VARCHAR(20) ,
-maintains_admin_id INT NOT NULL REFERENCES admin_account,
+csr_id VARCHAR(50) NOT NULL,
 PRIMARY KEY (csr_id),
 FOREIGN KEY (csr_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
