@@ -33,7 +33,7 @@ FOREIGN KEY (admin_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE
 -- on team VM as of 4.17.2016
 INSERT INTO admin_account (admin_id) Values ('admin');
 
-
+-- on team VM as of 4.24.2016
 DROP TABLE IF EXISTS csr_account;
 CREATE TABLE csr_account(
 csr_id VARCHAR(50) NOT NULL,
@@ -152,6 +152,7 @@ PRIMARY KEY (bid_id, member_id)
 );
 
 --provisional messages table. 4.24.2016
+-- on team VM as of 4.24.2016 . .. . might make changes later
 DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
 	message_id INT NOT NULL AUTO_INCREMENT,
