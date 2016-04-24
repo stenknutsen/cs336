@@ -152,6 +152,7 @@ PRIMARY KEY (bid_id, member_id)
 );
 
 --provisional messages table. 4.24.2016
+DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
 	message_id INT NOT NULL AUTO_INCREMENT,
 	src VARCHAR(50),
