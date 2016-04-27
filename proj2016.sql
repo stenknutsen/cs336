@@ -163,3 +163,15 @@ CREATE TABLE messages(
 
 );
 
+--NEW!!! Q and A page table
+CREATE TABLE questions(
+	question_id INT NOT NULL AUTO_INCREMENT,
+	src VARCHAR(50),
+	subject VARCHAR(50),
+	q_text VARCHAR(140),
+	a_text VARCHAR(140),
+	helpful INT,
+	PRIMARY KEY (question_id)
+
+);
+
