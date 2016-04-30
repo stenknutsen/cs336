@@ -101,10 +101,10 @@ hours_open INT,
 sale_price DECIMAL(10,2),
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
-item_of_item_id INT NOT NULL REFERENCES item,
-buy_now_guest_guest_id INT NOT NULL REFERENCES guest,
-cancel_csr_id INT NOT NULL REFERENCES csr_account,
-seller_of_member_id INT NOT NULL REFERENCES member_account 
+item_id INT NOT NULL REFERENCES item,
+guest_id INT NOT NULL REFERENCES guest,
+csr_id INT NOT NULL REFERENCES csr_account,
+seller_id INT NOT NULL REFERENCES member_account 
 ); 
 
 DROP TABLE IF EXISTS bid_history;
