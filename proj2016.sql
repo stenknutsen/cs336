@@ -1,8 +1,8 @@
 --TEAM 8
 --Deliverable #3
 --tables for project
-CREATE DATABASE IF NOT EXISTS proj2016
-USE proj2016
+CREATE DATABASE IF NOT EXISTS proj2016;
+USE proj2016;
 
 --account table on team VM as of 4.7.2016
 DROP TABLE IF EXISTS account;
@@ -164,6 +164,7 @@ CREATE TABLE messages(
 );
 
 --NEW!!! Q and A page table
+-- on team VM as of 4.30.2016
 CREATE TABLE questions(
 	question_id INT NOT NULL AUTO_INCREMENT,
 	src VARCHAR(50),
