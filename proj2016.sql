@@ -90,7 +90,7 @@ item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 min_price DECIMAL(10,2),
 max_price DECIMAL(10,2),
 item_condition VARCHAR(20),
-has_unique_upc_code VARCHAR(12) NOT NULL REFERENCES game
+upc_code BIGINT NOT NULL REFERENCES game
 );
 
 DROP TABLE IF EXISTS auction;
