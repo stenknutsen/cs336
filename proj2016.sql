@@ -177,6 +177,7 @@ CREATE TABLE questions(
 );
 
 --for demonstration purposes; 
+--on team VM as of 5.1.2016
 CREATE TABLE demo_auctions(
 	auction_id INT NOT NULL AUTO_INCREMENT,
 	seller VARCHAR(50),
@@ -189,6 +190,7 @@ INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'morticia');
 INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'gomez');
 
 --for demonstration purposes;
+--on team VM as of 5.1.2016
 CREATE TABLE demo_bids(
 	bid_id INT NOT NULL AUTO_INCREMENT,
 	bidder VARCHAR(50),
@@ -201,6 +203,7 @@ INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'lillian');
 INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'eddie');
 
 --for demonstration purposes;
+--on team VM as of 5.1.2016
 CREATE TABLE demo_sales(
 	sale_id INT NOT NULL AUTO_INCREMENT,
 	buyer VARCHAR(50),
