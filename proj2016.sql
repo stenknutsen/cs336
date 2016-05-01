@@ -199,3 +199,20 @@ INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'herman');
 INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'grandpa');
 INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'lillian');
 INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'eddie');
+
+--for demonstration purposes;
+CREATE TABLE demo_sales(
+	sale_id INT NOT NULL AUTO_INCREMENT,
+	buyer VARCHAR(50),
+	seller VARCHAR(50),
+	item_name VARCHAR(50),
+	sale_price DECIMAL(10,2),
+	PRIMARY KEY (sale_id)
+);
+INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'herman','gomez','The Simpsons','29.99');
+INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'grandpa','gomez','Minecraft','19.99');
+INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'lillian','gomez','Call of Duty','35.00');
+INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'eddie','gomez','Tetris','9.99');
+INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'herman','lurch','Minecraft','29.99');
+INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'herman','morticia','Tomb Raider','23.50');
+INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'herman','uncle_fester','Tetris','29.99');
