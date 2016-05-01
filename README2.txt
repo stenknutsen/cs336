@@ -8,7 +8,8 @@ I. [X] Create accounts of various kind; login, logout.
 IV. Customer representatives and admin functions
     [X] create an admin account ahead of time
     [X] messaging system to communicate between CSR, Admin and Members
-    the admin:
+    the admin.
+    [X] Hacker detection! (SQL Trigger). Sends warning message to admin if a 'hacker' registers.
     [X] creates accounts for customer representatives
         [X] generates sales reports for:
             [X] total earnings
