@@ -41,7 +41,63 @@ search_results_rating.jsp
 search_results.jsp
 sell_item.jsp
 
-
+Code Contributor: Sten Knutsen
+admin_account_update.jsp
+admin_inbox_message.jsp
+admin_message_sent.jsp
+admin_send_message.jsp
+admin_send_msg.jsp
+admin_sent_message.jsp
+admin_update_success.jsp
+admin_update.jsp
+administrator.jsp
+create_csr_acct.jsp
+create_csr.jsp
+csr_acc_del_success.jsp
+csr_account_update.jsp
+csr_answer_success.jsp
+csr_creation_success.jsp
+csr_delete_auction.jsp
+csr_delete_bids.jsp
+csr_inbox_message.jsp
+csr_message_sent.jsp
+csr_q_and_a.jsp
+csr_send_message.jsp
+csr_send_msg.jsp
+csr_sent_message.jsp
+csr_update_success.jsp
+csr_update.jsp
+csrda.jsp
+csrdb.jsp
+csrqa.jsp
+customer_service_rep.jsp
+destroy_csr_account.jsp
+destroy_csr.jsp
+disp_csr_accts.jsp
+disp_member_accts.jsp
+earnings_by_seller.jsp
+earnings_by_title.jsp
+index.jsp
+login.jsp
+logout.jsp
+member_inbox_message.jsp
+member_message_sent.jsp
+member_question_sent.jsp
+member_send_message.jsp
+member_send_msg.jsp
+member_sent_message.jsp
+not_welcome_csr.jsp
+not_welcome.jsp
+q_and_a.jsp
+q_n_a.jsp
+reg.jsp
+registration.jsp
+success_admin.jsp
+success_csr.jsp
+success.jsp
+view_q_and_a.jsp
+vqna.jsp
+welcome.jsp
 
 
 
