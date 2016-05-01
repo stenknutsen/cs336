@@ -176,3 +176,17 @@ CREATE TABLE questions(
 
 );
 
+--for demonstration purposes; 
+CREATE TABLE demo_auctions(
+	auction_id INT NOT NULL AUTO_INCREMENT,
+	seller VARCHAR(50),
+	PRIMARY KEY (auction_id)
+
+);
+INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'lurch');
+INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'uncle_fester');
+INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'morticia');
+INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'gomez');
+
+
+
