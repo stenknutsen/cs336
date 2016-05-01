@@ -219,3 +219,17 @@ INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'ed
 INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'herman','lurch','Minecraft','29.99');
 INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'herman','morticia','Tomb Raider','23.50');
 INSERT INTO demo_sales(sale_id,buyer,seller,item_name,sale_price)VALUES(NULL,'herman','uncle_fester','Tetris','29.99');
+
+
+--trigger detects "hacker" registering and sends message to admin
+--on team VM as of 5.1.2016
+DELIMITER //
+CREATE TRIGGER before_account_insert
+BEFORE INSERT ON account
+FOR EACH ROW
+BEGIN
+IF NEW.username = 'hacker' or NEW.username = 'hacker1' or NEW.username = 'hacker2' THEN
+INSERT INTO messages(message_id,src,dest,msg_text)VALUES(NULL,'security_system','admin','hacker has just registered!');
+END IF;
+END;//
+DELIMITER;
