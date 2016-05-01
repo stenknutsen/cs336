@@ -62,6 +62,7 @@ offer DECIMAL(10,2),
 autobid BOOLEAN
 );
 
+--on team VM as of 5.1.2016
 DROP TABLE IF EXISTS game;
 CREATE TABLE game(
 upc_code BIGINT NOT NULL,
@@ -84,6 +85,7 @@ paypal_info VARCHAR(30),
 PRIMARY KEY (guest_id)
 );
 
+--on team VM as of 5.1.2016
 DROP TABLE IF EXISTS item;
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -93,6 +95,7 @@ item_condition VARCHAR(20),
 upc_code BIGINT NOT NULL REFERENCES game
 );
 
+--on team VM as of 5.1.2016
 DROP TABLE IF EXISTS auction;
 CREATE TABLE auction(
 auction_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
