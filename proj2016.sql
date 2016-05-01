@@ -188,5 +188,14 @@ INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'uncle_fester');
 INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'morticia');
 INSERT INTO demo_auctions(auction_id,seller)VALUES(NULL,'gomez');
 
+--for demonstration purposes;
+CREATE TABLE demo_bids(
+	bid_id INT NOT NULL AUTO_INCREMENT,
+	bidder VARCHAR(50),
+	PRIMARY KEY (bid_id)
 
-
+);
+INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'herman');
+INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'grandpa');
+INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'lillian');
+INSERT INTO demo_bids(bid_id,bidder)VALUES(NULL,'eddie');
