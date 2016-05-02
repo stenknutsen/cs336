@@ -22,7 +22,7 @@ INSERT INTO account (username, password, first_name, last_name, email, regdate)
 VALUES ('admin','password','john','doe','jdoe@gmail.com','2016-04-06');
 
 -- on team VM as of 4.17.2016	
-DROP TABLE IF EXISTS admin_account;
+DROP TABLE IF EXISTS admin_acc ount;
 CREATE TABLE admin_account(
 admin_id VARCHAR(50) NOT NULL,
 PRIMARY KEY (admin_id),
@@ -74,28 +74,15 @@ units_sold INT DEFAULT NULL,
 PRIMARY KEY (upc_code)
 );
 
-DROP TABLE IF EXISTS guest;
-CREATE TABLE guest(
-guest_id INT NOT NULL AUTO_INCREMENT,
-name VARCHAR(20),
-email VARCHAR(30),
-shipping_address VARCHAR(30),
-credit_card_info VARCHAR(16),
-paypal_info VARCHAR(30),
-PRIMARY KEY (guest_id)
-);
 
---on team VM as of 5.1.2016
 DROP TABLE IF EXISTS item;
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 min_price DECIMAL(10,2),
-max_price DECIMAL(10,2),
 item_condition VARCHAR(20),
 upc_code BIGINT NOT NULL REFERENCES game
 );
 
---on team VM as of 5.1.2016
 DROP TABLE IF EXISTS auction;
 CREATE TABLE auction(
 auction_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -105,8 +92,6 @@ sale_price DECIMAL(10,2),
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
 item_id INT NOT NULL REFERENCES item,
-guest_id INT NOT NULL REFERENCES guest,
-csr_id INT NOT NULL REFERENCES csr_account,
 seller_id INT NOT NULL REFERENCES member_account 
 ); 
 
