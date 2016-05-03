@@ -88,7 +88,7 @@ CREATE TABLE auction(
 auction_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 hours_open INT,
-sale_price DECIMAL(10,2),
+auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
 item_id INT NOT NULL REFERENCES item,
 seller_id INT NOT NULL REFERENCES member_account 
