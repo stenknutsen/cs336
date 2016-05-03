@@ -22,7 +22,7 @@ INSERT INTO account (username, password, first_name, last_name, email, regdate)
 VALUES ('admin','password','john','doe','jdoe@gmail.com','2016-04-06');
 
 -- on team VM as of 4.17.2016	
-DROP TABLE IF EXISTS admin_acc ount;
+DROP TABLE IF EXISTS admin_account;
 CREATE TABLE admin_account(
 admin_id VARCHAR(50) NOT NULL,
 PRIMARY KEY (admin_id),
