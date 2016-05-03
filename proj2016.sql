@@ -43,7 +43,7 @@ FOREIGN KEY (csr_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE C
 
 DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
-member_id VARCHAR(30) NOT NULL,
+member_id VARCHAR(50) NOT NULL,
 street_address VARCHAR(60),
 city VARCHAR(50),
 zip VARCHAR(20),
@@ -89,7 +89,7 @@ hours_open INT,
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
 item_id INT NOT NULL REFERENCES item,
-seller_id INT NOT NULL REFERENCES member_account 
+seller_id VARCHAR(50) NOT NULL REFERENCES member_account 
 ); 
 
 DROP TABLE IF EXISTS bid_history;
