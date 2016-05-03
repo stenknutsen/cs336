@@ -57,7 +57,10 @@ CREATE TABLE bid(
 bid_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 time_placed TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 offer DECIMAL(10,2),
-autobid BOOLEAN
+autobid BOOLEAN,
+autobid_limit DECIMAL(10,2),
+username VARCHAR(50) NOT NULL,
+FOREIGN KEY(username) REFERENCES account (username)
 );
 
 --on team VM as of 5.1.2016
