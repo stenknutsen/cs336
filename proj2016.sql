@@ -88,7 +88,7 @@ DROP TABLE IF EXISTS auction;
 CREATE TABLE auction(
 auction_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-hours_open INT,
+hours_open TIMESTAMP,
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
 item_id INT NOT NULL REFERENCES item,
