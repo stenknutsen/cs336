@@ -43,7 +43,7 @@ FOREIGN KEY (csr_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE C
 
 DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
-member_id VARCHAR(50) NOT NULL,
+member_id BIGINT NOT NULL,
 street_address VARCHAR(60),
 city VARCHAR(50),
 zip VARCHAR(20),
