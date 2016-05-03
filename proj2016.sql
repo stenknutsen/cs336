@@ -48,10 +48,6 @@ street_address VARCHAR(60),
 city VARCHAR(50),
 zip VARCHAR(20),
 credit_card_number VARCHAR(20),
-FOREIGN KEY (member_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
---maintains_csr_id INT NOT NULL references csr_account,
 PRIMARY KEY (member_id),
 FOREIGN KEY (member_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
