@@ -40,7 +40,7 @@ csr_id VARCHAR(50) NOT NULL,
 PRIMARY KEY (csr_id),
 FOREIGN KEY (csr_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS member_account;
 CREATE TABLE member_account(
 member_id VARCHAR(50) NOT NULL,
