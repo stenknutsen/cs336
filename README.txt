@@ -6,6 +6,8 @@ buy_item.jsp
 buy_page.jsp
 buy_results_error.jsp
 buy_results.jsp
+search_buy_bid_error.jsp
+search_buy_bid.jsp
 search_item.jsp
 search_page.jsp
 search_results_error.jsp
