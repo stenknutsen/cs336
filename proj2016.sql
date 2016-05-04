@@ -133,8 +133,8 @@ member_id INT NOT NULL REFERENCES member_account ON DELETE cascade,
 PRIMARY KEY (bid_id, member_id)
 );
 
---provisional messages table. 4.24.2016
--- on team VM as of 4.24.2016 . .. . might make changes later
+
+-- on team VM as of 4.24.2016
 DROP TABLE IF EXISTS messages;
 CREATE TABLE messages(
 	message_id INT NOT NULL AUTO_INCREMENT,
