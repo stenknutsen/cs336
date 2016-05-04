@@ -102,7 +102,7 @@ auction_id INT NOT NULL REFERENCES auction ON DELETE cascade,
 PRIMARY KEY (bid_id, auction_id)
 );
 
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS buy_now_member;
 CREATE TABLE buy_now_member(
 member_id INT NOT NULL REFERENCES member_account on delete cascade,
