@@ -218,23 +218,15 @@ END;//
 DELIMITER;
 -- on team VM as of 5.4.2016
 DELIMITER //
-CREATE TRIGGER after_delete_auction
-AFTER DELETE ON auction
-FOR EACH ROW
-BEGIN
-Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.seller_id,'Your auction ended');
+ CREATE TRIGGER test
+	    AFTER DELETE ON auction
+	    FOR EACH ROW
+	    BEGIN
+	    Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.bidder_id,'You won an auction!');
+	    Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.seller_id,'Your auction ended');
 END;//
 DELIMITER;
-
-DELIMITER //
-CREATE TRIGGER after_delete_winner
-AFTER DELETE ON auction
-FOR EACH ROW
-BEGIN
-Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.bidder_id,'You won an auction!');
-END;//
-DELIMITER;
-
+	    
 DELIMITER //
 CREATE TRIGGER notify_bidder
 AFTER UPDATE ON auction
