@@ -75,7 +75,7 @@ units_sold INT DEFAULT NULL,
 PRIMARY KEY (upc_code)
 );
 
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS item;
 CREATE TABLE item(
 item_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
