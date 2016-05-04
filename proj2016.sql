@@ -125,7 +125,7 @@ bid_history_id INT NOT NULL references bid_history on delete cascade,
 auction_id INT NOT NULL references auction on delete cascade,
 Primary Key (bid_history_id, auction_id) 
 );
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS makes;
 CREATE TABLE makes(
 bid_id INT NOT NULL REFERENCES bid ON DELETE cascade,
