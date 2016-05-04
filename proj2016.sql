@@ -235,4 +235,13 @@ Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.bidde
 END;//
 DELIMITER;
 
+DELIMITER //
+CREATE TRIGGER notify_bidder
+AFTER UPDATE ON auction
+FOR EACH ROW
+BEGIN
+INSERT INTO messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.bidder_id,'Some one outbid you!');
+END;//
+DELIMITER;
+
 create event newevent on schedule every 1 minute do delete from auction where hours_open < Now();
