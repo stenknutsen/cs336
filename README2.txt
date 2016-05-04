@@ -9,12 +9,12 @@ II. Auctions
     [X] set a hidden minimum price (reserve)
     [X] a buyer should be able to bid
         [X] manually
-            [X] alert the buyer that a higher bid has been placed
+            [] alert the buyer that a higher bid has been placed
               [X] let the buyer set a new bid
         [X] with automatic bidding
             [X] set a secret upper limit
             [X] put in a higher bid automatically for the user in case someone bids higher
-            [X] alert the buyer in case someone bids more than your upper limit
+            [] alert the buyer in case someone bids more than your upper limit
    [] when the closing date and time has come
         [] check if the seller has set a reserve
              [] if yes: if the reserve is higher than the last bid none is the winner.
