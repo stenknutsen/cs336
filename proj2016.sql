@@ -94,7 +94,7 @@ current_highest_bid DECIMAL(10,2),
 item_id INT NOT NULL REFERENCES item,
 seller_id VARCHAR(50) NOT NULL REFERENCES member_account 
 ); 
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS bid_history;
 CREATE TABLE bid_history(
 bid_id INT NOT NULL REFERENCES bid ON DELETE cascade,
