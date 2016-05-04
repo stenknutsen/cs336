@@ -109,7 +109,7 @@ member_id INT NOT NULL REFERENCES member_account on delete cascade,
 auction_id INT NOT NULL REFERENCES auction on delete cascade,
 Primary Key (member_id, auction_id) 
 );
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS cart;
 CREATE TABLE cart(
 purchase_id INT NOT NULL,
