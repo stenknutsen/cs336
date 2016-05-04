@@ -216,4 +216,13 @@ END IF;
 END;//
 DELIMITER;
 
+DELIMITER //
+CREATE TRIGGER after_delete_auction
+AFTER DELETE ON auction
+FOR EACH ROW
+BEGIN
+Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.seller_id,'Your auction ended');
+END;//
+DELIMITER;
+
 create event newevent on schedule every 1 minute do delete from auction where hours_open < Now();
