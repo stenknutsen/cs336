@@ -83,7 +83,7 @@ min_price DECIMAL(10,2),
 item_condition VARCHAR(20),
 upc_code BIGINT NOT NULL REFERENCES game
 );
--- on team VM as of 5.3.2016
+
 DROP TABLE IF EXISTS auction;
 CREATE TABLE auction(
 auction_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -93,7 +93,7 @@ auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
 item_id INT NOT NULL REFERENCES item,
 seller_id VARCHAR(50) NOT NULL REFERENCES member_account,
-username VARCHAR(50) REFERENCES member_account
+bidder_id VARCHAR(50) REFERENCES member_account
 ); 
 -- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS bid_history;
@@ -223,6 +223,15 @@ AFTER DELETE ON auction
 FOR EACH ROW
 BEGIN
 Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.seller_id,'Your auction ended');
+END;//
+DELIMITER;
+
+DELIMITER //
+CREATE TRIGGER after_delete_auction
+AFTER DELETE ON auction
+FOR EACH ROW
+BEGIN
+Insert into messages(message_id,src,dest,msg_text)VALUES(NULL,'System',old.bidder_id,'You won an auction!');
 END;//
 DELIMITER;
 
