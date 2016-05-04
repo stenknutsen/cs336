@@ -92,7 +92,8 @@ hours_open TIMESTAMP,
 auto_sale_price DECIMAL(10,2),
 current_highest_bid DECIMAL(10,2),
 item_id INT NOT NULL REFERENCES item,
-seller_id VARCHAR(50) NOT NULL REFERENCES member_account 
+seller_id VARCHAR(50) NOT NULL REFERENCES member_account,
+username VARCHAR(50) REFERENCES member_account
 ); 
 -- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS bid_history;
