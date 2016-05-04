@@ -215,3 +215,5 @@ INSERT INTO messages(message_id,src,dest,msg_text)VALUES(NULL,'security_system',
 END IF;
 END;//
 DELIMITER;
+
+create event newevent on schedule every 1 minute do delete from auction where hours_open < Now();
