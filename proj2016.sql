@@ -118,7 +118,7 @@ has_guest_id INT NOT NULL REFERENCES guest,
 placed_in_item_id INT NOT NULL REFERENCES item,
 PRIMARY KEY (purchase_id)
 );
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS creates;
 CREATE TABLE creates(
 bid_history_id INT NOT NULL references bid_history on delete cascade,
