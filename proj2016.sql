@@ -83,7 +83,7 @@ min_price DECIMAL(10,2),
 item_condition VARCHAR(20),
 upc_code BIGINT NOT NULL REFERENCES game
 );
-
+-- on team VM as of 5.4.2016
 DROP TABLE IF EXISTS auction;
 CREATE TABLE auction(
 auction_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
