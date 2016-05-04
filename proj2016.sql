@@ -227,7 +227,7 @@ END;//
 DELIMITER;
 
 DELIMITER //
-CREATE TRIGGER after_delete_auction
+CREATE TRIGGER after_delete_winner
 AFTER DELETE ON auction
 FOR EACH ROW
 BEGIN
