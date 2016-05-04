@@ -51,7 +51,7 @@ credit_card_number VARCHAR(20),
 PRIMARY KEY (member_id),
 FOREIGN KEY (member_id) REFERENCES account (username) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
+-- on team VM as of 5.3.2016
 DROP TABLE IF EXISTS bid;
 CREATE TABLE bid(
 bid_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
