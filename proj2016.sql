@@ -216,7 +216,7 @@ INSERT INTO messages(message_id,src,dest,msg_text)VALUES(NULL,'security_system',
 END IF;
 END;//
 DELIMITER;
-
+-- on team VM as of 5.4.2016
 DELIMITER //
 CREATE TRIGGER after_delete_auction
 AFTER DELETE ON auction
